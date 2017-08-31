@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="el"> 
+        {{ message.name }} {{message.name}} {{}}
+    </div>
+    <script src="./js/observer.js"></script>
+    <script src="./js/compile.js"></script>
+    <script src="./js/wathcer.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script>
+        var app = new Sue({
+            el: '#el',
+            data: {
+                message: {
+                    name: 1
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>
