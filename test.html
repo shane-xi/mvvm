@@ -8,7 +8,8 @@
 </head>
 <body>
     <div id="el"> 
-        {{ message.name }} {{message.name}} {{}}
+        <p>{{ message.name }} {{message.name}} {{}}</p>
+        <p v-html='message.name'></p>
     </div>
     <script src="./js/observer.js"></script>
     <script src="./js/compile.js"></script>
@@ -21,7 +22,6 @@
                 message: {
                     name: 1
                 }
-
             }
         })
     </script>

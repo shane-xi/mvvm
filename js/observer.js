@@ -15,10 +15,14 @@ function defineReactive(data, key, value) {
         configurable: true,
         get: function() {
             //监听
+
+            if (EventLoop.target) {
+                EventLoop.on(EventLoop.target)
+            }
             return value;
         },
         set: function(newValue) {
-            //eventloop.emit()
+            eventloop.emit()
         }
     })
 }
@@ -27,10 +31,11 @@ function EventLoop() {
     this.loop = [];
 }
 EventLoop.prototype.on = function(sub) {
-    this.loop.push()
+    this.loop.push(sub)
 }
 EventLoop.prototype.emit = function() {
     this.loop.forEach(function(sub) {
         sub.update();
     })
 }
+EventLoop.target = null;
